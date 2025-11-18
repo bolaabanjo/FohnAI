@@ -1,7 +1,21 @@
+"use client"
+
 import Image from "next/image";
 import { ThemeSwitcher } from "@/components/theme";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Determine which logo to show based on resolved theme
+  const currentTheme = mounted ? resolvedTheme : 'light';
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-4xl flex-col justify-between py-48 px-8 bg-white dark:bg-black">
@@ -23,8 +37,17 @@ export default function Home() {
           </div>
         </div>
 
-        <footer className="flex justify-center mt-12">
+        <footer className="flex flex-col items-center gap-4 mt-12">
           <ThemeSwitcher />
+          {mounted && (
+            <Image
+              src={currentTheme === 'dark' ? '/cdark.PNG' : '/clight.PNG'}
+              alt="FohnAI Logo"
+              width={32}
+              height={32}
+              priority
+            />
+          )}
         </footer>
       </main>
     </div>
