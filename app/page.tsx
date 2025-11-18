@@ -43,8 +43,8 @@ export default function Home() {
             <Image
               src={currentTheme === 'dark' ? '/cdark.PNG' : '/clight.PNG'}
               alt="FohnAI Logo"
-              width={32}
-              height={32}
+              width={20}
+              height={20}
               priority
             />
           )}
