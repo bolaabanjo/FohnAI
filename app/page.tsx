@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { ThemeSwitcher } from "@/components/theme";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-4xl flex-col py-48 px-8 bg-white dark:bg-black">
+      <main className="flex min-h-screen w-full max-w-4xl flex-col justify-between py-48 px-8 bg-white dark:bg-black">
         <div className="flex flex-col gap-8 max-w-3xl">
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
@@ -21,6 +22,10 @@ export default function Home() {
               </a></p>
           </div>
         </div>
+
+        <footer className="flex justify-center mt-12">
+          <ThemeSwitcher />
+        </footer>
       </main>
     </div>
   );
