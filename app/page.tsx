@@ -27,7 +27,7 @@ export default function Home() {
             <p className="text-base leading-relaxed text-zinc-600 dark:text-zinc-400 mt-6">
               Checkout {" "}
               <a
-                href="https://cencori.vercel.app"
+                href="https://cencori.com"
                 className="font-medium text-zinc-950 dark:text-zinc-50 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
